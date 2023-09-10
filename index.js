@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const PORT = 1100;
+const router = require('./routes/index.js');
 
-app.get('/', (req, res) => {
-    res.send('Hello project')
-})
 
-app.listen(PORT, () => {`app listen on port ${PORT}`})
+app.use('/api', router);
+
+app.listen(PORT, () => {console.log(`app listen on port ${PORT}`)})
